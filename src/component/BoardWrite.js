@@ -4,16 +4,13 @@ import "../css/userform.css";
 import { useNavigate } from "react-router-dom";
 import BoardForm from "./BoardForm";
 
-
 const BoardWrite = () => {
-  const [inputs, setInputs] =
-    useState
-      ({
-        nickname: "",
-        password: "",
-        title: "",
-        content: "",
-      });
+  const [inputs, setInputs] = useState({
+    nickname: "",
+    password: "",
+    title: "",
+    content: "",
+  });
 
   const navigate = useNavigate();
   const { nickname, password, title, content } = inputs; // 비구조화 할당
@@ -42,7 +39,7 @@ const BoardWrite = () => {
   //   setData(value);
   // }
 
-  const onSubmitForm = (e>) => {
+  const onSubmitForm = (e) => {
     axios
       .post("http://localhost:4000/board", {
         dataname: nickname,

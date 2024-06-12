@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import BoardWrite from "./BoardWrite";
 import { useLocation, useParams } from "react-router-dom";
+import BoardForm from "./BoardForm";
 
 const BoardModify = () => {
   const id = useParams();
@@ -15,11 +16,16 @@ const BoardModify = () => {
   const location = useLocation();
   const from = location.state;
   console.log("link state----->", from);
+  console.log("location console----->", location);
+
+  const onChangeModify = () => {
+    console.log("수정폼ㅇㅇㅇ");
+  };
 
   return (
     <div>
       수정게시판 ㅇㅇㅇㅇㅇㅇ
-      <BoardWrite />
+      <BoardForm />
     </div>
   );
 };

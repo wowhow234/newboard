@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 const Board = () => {
-  const [board, setBoard] = useState();
+  const [board, setBoard] = useState([]);
 
   const getBoardList = async () => {
     await axios

@@ -16,6 +16,7 @@ const BoardDetail = () => {
     navigate(-1);
   };
 
+  // 게시글 상세 내용 불러오는 api
   useEffect(() => {
     axios
       .get(`http://localhost:4000/board/${id}`)
@@ -28,6 +29,7 @@ const BoardDetail = () => {
       .catch((err) => console.log(err));
   }, []);
 
+  // 게시글 삭제하기
   const onClickDelete = (e) => {
     const dataPw = boardDetail.datapw;
     if (isDeletePw === dataPw) {
@@ -36,7 +38,7 @@ const BoardDetail = () => {
         .delete(`http://localhost:4000/board/${id}`)
         .then((response) => {
           alert("삭제하였습니다.");
-          // navigate("/board")
+          navigate("/board");
           console.log("삭제성공----->", response);
         })
         .catch((err) => console.error(err));
@@ -79,6 +81,7 @@ const BoardDetail = () => {
           nickname: boardDetail.dataname,
           title: boardDetail.datatitle,
           content: boardDetail.datacontent,
+          id: boardDetail.id,
         }}
       >
         <button type="button">수정하기</button>

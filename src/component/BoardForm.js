@@ -1,6 +1,6 @@
 import React from "react";
 
-const BoardForm = () => {
+const BoardForm = ({ handleInputChange, inputs }) => {
   //     const [inputs, setInputs] = useState({
   //   nickname: "",
   //   password: "",
@@ -8,7 +8,7 @@ const BoardForm = () => {
   //   content : "",
   //     })
 
-  //     const { nickname, password, title, content } = inputs; // 비구조화 할당
+  const { nickname, password, title, content } = inputs; // 비구조화 할당
 
   //   const onChangeInput = (e : React.ChangeEvent<HTMLInputElement>) => {
   //   const { value, name } = e.target; // e.target 에서 name과 value 만 가져오기
@@ -23,8 +23,6 @@ const BoardForm = () => {
   // useEffect(() => {
   //   console.log("inputs----->", inputs)
   // }, [inputs])
-
-  const { nickname, password, title, content } = inputs;
 
   return (
     <div>
