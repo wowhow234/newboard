@@ -57,6 +57,8 @@ const BoardWrite = () => {
     console.log("-----제출완료----", inputs);
   };
 
+  const InputLabel = {};
+
   return (
     <>
       <form onSubmit={onSubmitForm}>
