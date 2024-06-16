@@ -78,10 +78,11 @@ const BoardDetail = () => {
       <Link
         to={`/modify/${id}`}
         state={{
-          nickname: boardDetail.dataname,
-          title: boardDetail.datatitle,
-          content: boardDetail.datacontent,
-          id: boardDetail.id,
+          toM_nickname: boardDetail.dataname,
+          toM_title: boardDetail.datatitle,
+          toM_content: boardDetail.datacontent,
+          toM_id: boardDetail.id,
+          toM_pw: boardDetail.datapw,
         }}
       >
         <button type="button">수정하기</button>

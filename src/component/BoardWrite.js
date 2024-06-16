@@ -25,19 +25,8 @@ const BoardWrite = () => {
   };
 
   useEffect(() => {
-    console.log("inputs----->", inputs);
+    console.log("🍪🍪🍪🍪inputs----->", inputs);
   }, [inputs]);
-
-  // const [data, setData] = useState<Data>({
-  //   nickname: "",
-  //   password: "",
-  //   title: "",
-  //   content : "",
-  // });
-
-  // const inputData = (value) => {
-  //   setData(value);
-  // }
 
   const onSubmitForm = (e) => {
     axios
@@ -57,28 +46,10 @@ const BoardWrite = () => {
     console.log("-----제출완료----", inputs);
   };
 
-  const InputLabel = {};
-
   return (
     <>
       <form onSubmit={onSubmitForm}>
-        {/* <label>닉네임</label>
-        <input type="text" name="nickname" value={nickname} onChange={onChangeInput} required/>
-        <label>비밀번호</label>
-        <input type="password" name="password" value={password} onChange={onChangeInput} required/>
-        <label>제목</label>
-        <input type="text" name="title" value={title} onChange={onChangeInput} required/>
-        <label>글 내용</label>
-        <input type="text" name="content" value={content} onChange={onChangeInput} required/>
-        <button>등록하기</button> */}
-        <BoardForm
-          // nickname={nickname}
-          // password={password}
-          // title={title}
-          // content={content}
-          inputs={inputs}
-          handleInputChange={onChangeInput}
-        />
+        <BoardForm inputs={inputs} handleInputChange={onChangeInput} />
       </form>
     </>
   );
