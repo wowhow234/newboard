@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import "../css/board.css";
 
 const BoardDetail = () => {
   const { id } = useParams();
@@ -57,37 +58,49 @@ const BoardDetail = () => {
   return (
     <div>
       <h3>게시판 상세 내용</h3>
-      <span>파라미터 : {id}</span>
       <button onClick={goBack}>뒤로가기</button>
       {/* <BoardItem /> */}
-      <span>{boardDetail.dataname}</span>
-      <span>{boardDetail.datatitle}</span>
-      <span>{boardDetail.datacontent}</span>
-      <div style={{ border: "1px solid black" }}>
-        비밀번호를 입력하세요 :{" "}
-        <input
-          type="password"
-          name="password"
-          value={isDeletePw || ""}
-          onChange={onChangeDelete}
-        />
+      <div className="board-detail">
+        <div className="d1">
+          <span>작성자 : </span>
+          <span>{boardDetail.dataname}</span>
+        </div>
+        <div className="d1">
+          <span>제목 : </span>
+          <span>{boardDetail.datatitle}</span>
+        </div>
+        <div className="d1">
+          <span>내용</span>
+          <div className="d-content">{boardDetail.datacontent}</div>
+        </div>
+        <div style={{ border: "1px solid black" }}>
+          비밀번호를 입력하세요 :{" "}
+          <input
+            type="password"
+            name="password"
+            value={isDeletePw || ""}
+            onChange={onChangeDelete}
+          />
+        </div>
+        {isDeleteFail && (
+          <div style={{ color: "red" }}>비밀번호가 틀렸습니다.</div>
+        )}
+        <div className="detail-button">
+          <button onClick={onClickDelete}>삭제하기</button>
+          <Link
+            to={`/modify/${id}`}
+            state={{
+              toM_nickname: boardDetail.dataname,
+              toM_title: boardDetail.datatitle,
+              toM_content: boardDetail.datacontent,
+              toM_id: boardDetail.id,
+              toM_pw: boardDetail.datapw,
+            }}
+          >
+            <button type="button">수정하기</button>
+          </Link>
+        </div>
       </div>
-      {isDeleteFail && (
-        <div style={{ color: "red" }}>비밀번호가 틀렸습니다.</div>
-      )}
-      <button onClick={onClickDelete}>삭제하기</button>
-      <Link
-        to={`/modify/${id}`}
-        state={{
-          toM_nickname: boardDetail.dataname,
-          toM_title: boardDetail.datatitle,
-          toM_content: boardDetail.datacontent,
-          toM_id: boardDetail.id,
-          toM_pw: boardDetail.datapw,
-        }}
-      >
-        <button type="button">수정하기</button>
-      </Link>
     </div>
   );
 };

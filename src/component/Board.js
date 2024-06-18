@@ -19,28 +19,41 @@ const Board = () => {
 
   useEffect(() => {
     getBoardList();
-    // axios.get("/db/data.json")
-    // .then((response) => {
-    //   console.log(response);
-    //   setBoard(response.data);
-    //   console.log("board---->", board)
-    // })
-    // .catch((err) => console.log(err));
   }, []);
 
   return (
     <div className="boardwrapper">
-      <h3>게시글 내용</h3>
-      <Link to={"/"}>메인으로</Link>
-      {board.map((item) => {
-        return (
-          <div key={item.id}>
-            <span>게시글번호 : {item.id}</span>
-            <Link to={`/board/${item.id}`}>{item.datatitle}</Link>
-            <span>작성자 : {item.dataname}</span>
-          </div>
-        );
-      })}
+      <div className="Link2">
+        <Link to={"/"}>
+          <span>메인으로</span>
+        </Link>
+      </div>
+      <table className="board-table">
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>제목</th>
+            <th>작성자</th>
+          </tr>
+        </thead>
+        <tbody>
+          {board.map((item) => {
+            return (
+              <tr key={item.id}>
+                <td>
+                  <span>{item.id}</span>
+                </td>
+                <td>
+                  <Link to={`/board/${item.id}`}>{item.datatitle}</Link>
+                </td>
+                <td>
+                  <span>{item.dataname}</span>
+                </td>
+              </tr>
+            );
+          })}
+        </tbody>
+      </table>
     </div>
   );
 };

@@ -1,3 +1,46 @@
 .boardwrapper {
   border: 1px solid blue;
+}
+
+.Link2 {
+  border: 1px solid blue;
+}
+.Link2 span {
+  margin: 20px;
+  font-size: 30px;
+}
+
+.board-table {
+  border: 1px solid red;
+}
+.board-table th {
+  background-color: bisque;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+}
+
+th,
+td {
+  border: 1px solid black;
+}
+
+.board-detail {
+  text-align: left;
+  border: 1px solid black;
+}
+.board-detail .d1 {
+  margin: 10px 0;
+}
+.board-detail .d-content {
+  background-color: rgb(210, 210, 210);
+  margin: 10px;
+}
+
+.deatil-button {
+  border: 1px solid orange;
 }/*# sourceMappingURL=board.css.map */
