@@ -31,20 +31,6 @@
       "datacontent": "관리자123123 "
     },
     {
-      "id": "16fc",
-      "dataname": "테스트용글1",
-      "datatitle": "테스트용제목",
-      "datacontent": "테스트내용",
-      "datapw": "123123"
-    },
-    {
-      "id": "ee18",
-      "dataname": "테스트",
-      "datatitle": "aaa",
-      "datacontent": "dfsdf",
-      "datapw": "2323"
-    },
-    {
       "id": "8931",
       "dataname": "",
       "datatitle": "",
@@ -52,25 +38,12 @@
       "datapw": ""
     },
     {
-      "id": "a5f1",
-      "dataname": "되나",
-      "datatitle": "되나요",
-      "datacontent": "테스트중 입니다. ",
-      "datapw": "123"
-    },
-    {
-      "id": "48b7",
-      "dataname": "해결완",
-      "datatitle": "123",
-      "datacontent": "이렇게 하니 되네.. 오오..",
-      "datapw": "dhdh"
-    },
-    {
-      "id": "4039",
-      "dataname": "투바투",
-      "datatitle": "낼기붐은온다",
-      "datacontent": "투바투좋아~!",
-      "datapw": "tomorrow"
+      "id": "a59b",
+      "dataname": "짱바투",
+      "datatitle": "두밧두",
+      "datacontent": "낼기붐은온다",
+      "datapw": "123",
+      "dataconent": "좋아"
     }
   ]
 }

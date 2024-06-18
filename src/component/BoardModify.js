@@ -1,11 +1,8 @@
 import React, { useEffect, useState } from "react";
-import BoardWrite from "./BoardWrite";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
-import Input from "./Input";
+import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const BoardModify = () => {
-  const id = useParams();
   const navigate = useNavigate();
   const goBack = () => {
     navigate(-1);
@@ -39,8 +36,6 @@ const BoardModify = () => {
       [name]: value,
     });
     console.log("e.target.value(onChange)-----", e.target.value);
-    // console.log("e.target.name??----->", e.target.name);
-    console.log("e.target찍어보기----->", e.target);
   };
 
   const LOCATION_INPUT_DATA = [
@@ -73,6 +68,18 @@ const BoardModify = () => {
   }, [modifyInputs]); // 의존성 배열은 빈 값으로 하면 location, modifyIpunts 콘솔은 최초 실행됨.
 
   const onSubmitModifyForm = (e) => {
+    axios
+      .patch(`http://localhost:4000/board/${Mid}`, {
+        dataname: Mnickname,
+        datatitle: Mtitle,
+        datacontent: Mcontent,
+        datapw: Mpassword,
+      })
+      .then((res) => {
+        console.log("patch 응답---->", res);
+        navigate("/board");
+      })
+      .catch((err) => console.log("-----ERROR----", err));
     setModifyInputs(modifyInputs);
     e.preventDefault();
     console.log("📫-------폼 제출 확인-------", modifyInputs);
@@ -89,7 +96,7 @@ const BoardModify = () => {
               type={item.type}
               name={item.name}
               defaultValue={item.value}
-              key={item.value}
+              // key={item.value}
               onChange={onChangeModifyInput}
               required
             />

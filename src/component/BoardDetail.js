@@ -27,7 +27,8 @@ const BoardDetail = () => {
         // console.log("params----->", id);
       })
       .catch((err) => console.log(err));
-  }, []);
+    console.log("삭제pw--->", isDeletePw);
+  }, [isDeletePw]);
 
   // 게시글 삭제하기
   const onClickDelete = (e) => {
@@ -50,7 +51,7 @@ const BoardDetail = () => {
 
   const onChangeDelete = (e) => {
     setIsDeletePw(e.target.value);
-    console.log("삭제pw--->", isDeletePw);
+    // console.log("삭제pw--->", isDeletePw);
   };
 
   return (
