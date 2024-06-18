@@ -1,9 +1,10 @@
 import React from "react";
+import "../css/header.css";
 
 const Header = () => {
   return (
     <header>
-      <span>헤더헤더헤더</span>
+      <span>헤더폰트20px</span>
     </header>
   );
 };

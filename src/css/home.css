@@ -1,0 +1,12 @@
+.wrapper {
+  border: 4px solid rgb(160, 19, 3);
+}
+
+.Link1 {
+  border: 1px solid blue;
+  display: inline;
+}
+.Link1 span {
+  margin: 10px;
+  font-size: 30px;
+}/*# sourceMappingURL=home.css.map */

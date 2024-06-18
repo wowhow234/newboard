@@ -1,0 +1,15 @@
+.wrapper {
+  border: 4px solid rgb(160, 19, 3);
+  // width: 360px;
+  // height: 100%;
+  // margin: 0 auto;
+}
+
+.Link1 {
+  border: 1px solid blue;
+  display: inline;
+  & span {
+    margin: 10px;
+    font-size: 30px;
+  }
+}
