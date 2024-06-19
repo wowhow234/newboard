@@ -22,13 +22,12 @@ const BoardDetail = () => {
     axios
       .get(`http://localhost:4000/board/${id}`)
       .then((response) => {
-        console.log("get요청한거 받아지나?----->", response.data);
+        // console.log("response----->", response.data);
         setBoardDetail(response.data);
         // console.log("boardDetail---->", boardDetail);
-        // console.log("params----->", id);
       })
-      .catch((err) => console.log(err));
-    console.log("삭제pw--->", isDeletePw);
+      .catch((err) => console.err(err));
+    // console.log("삭제pw--->", isDeletePw);
   }, [isDeletePw]);
 
   // 게시글 삭제하기
@@ -46,7 +45,7 @@ const BoardDetail = () => {
         .catch((err) => console.error(err));
     } else {
       setIsDeleteFail(true);
-      console.error("에러발생", Error);
+      console.error("ERROR!", Error);
     }
   };
 
@@ -62,19 +61,20 @@ const BoardDetail = () => {
       {/* <BoardItem /> */}
       <div className="board-detail">
         <div className="d1">
-          <span>작성자 : </span>
+          <span>작성자 | </span>
           <span>{boardDetail.dataname}</span>
         </div>
         <div className="d1">
-          <span>제목 : </span>
+          <span>제목 | </span>
           <span>{boardDetail.datatitle}</span>
         </div>
         <div className="d1">
           <span>내용</span>
           <div className="d-content">{boardDetail.datacontent}</div>
         </div>
-        <div style={{ border: "1px solid black" }}>
-          비밀번호를 입력하세요 :{" "}
+        <hr />
+        <div className="d-delete">
+          비밀번호를 입력하세요{" "}
           <input
             type="password"
             name="password"
@@ -83,10 +83,9 @@ const BoardDetail = () => {
           />
         </div>
         {isDeleteFail && (
-          <div style={{ color: "red" }}>비밀번호가 틀렸습니다.</div>
+          <div className="d-wrong-pw">비밀번호가 틀렸습니다.</div>
         )}
         <div className="detail-button">
-          <button onClick={onClickDelete}>삭제하기</button>
           <Link
             to={`/modify/${id}`}
             state={{
@@ -99,6 +98,7 @@ const BoardDetail = () => {
           >
             <button type="button">수정하기</button>
           </Link>
+          <button onClick={onClickDelete}>삭제하기</button>
         </div>
       </div>
     </div>

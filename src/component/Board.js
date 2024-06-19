@@ -10,7 +10,7 @@ const Board = () => {
     await axios
       .get("http://localhost:4000/board")
       .then((response) => {
-        console.log("response----->", response);
+        // console.log("response----->", response);
         setBoard(response.data);
         // console.log("board----->", board)
       })

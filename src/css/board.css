@@ -11,11 +11,7 @@
 }
 
 .board-table {
-  border: 1px solid red;
-}
-.board-table th {
-  background-color: bisque;
-  text-align: center;
+  border: 2px solid red;
 }
 
 table {
@@ -24,23 +20,68 @@ table {
   text-align: center;
 }
 
+thead {
+  font-weight: bold;
+  color: #fff;
+  background: #73685d;
+}
+
 th,
 td {
   border: 1px solid black;
+  padding: 1em 0.5em;
+  vertical-align: middle;
 }
 
 .board-detail {
   text-align: left;
-  border: 1px solid black;
+  border: 2px solid rgb(0, 68, 255);
+  padding: 1em 0.5em;
 }
 .board-detail .d1 {
   margin: 10px 0;
 }
 .board-detail .d-content {
-  background-color: rgb(210, 210, 210);
-  margin: 10px;
+  background-color: rgb(231, 231, 231);
+  padding: 0.5em 1em 1.5em 1em;
+  margin: 0.5em;
 }
 
-.deatil-button {
+hr {
+  border-top: 1px solid #8c8c8c;
+  width: 90%;
+  margin: 1.3em auto;
+}
+
+.d-delete {
+  border: 1px solid black;
+  display: block;
+  text-align: center;
+}
+.d-delete input {
+  width: 7em;
+  height: 1.3em;
+}
+
+.d-wrong-pw {
+  color: rgb(77, 68, 68);
+  text-align: center;
+}
+
+.detail-button {
   border: 1px solid orange;
+  text-align: center;
+  margin: 0.5em 0;
+}
+.detail-button button {
+  margin: 0 0.5em;
+  border-radius: 0.5em;
+  border: none;
+  background-color: rgb(212, 120, 0);
+  color: white;
+  font-weight: 400;
+  font-size: 14px;
+  padding: 5px;
+  width: 8em;
+  letter-spacing: 3px;
 }/*# sourceMappingURL=board.css.map */
