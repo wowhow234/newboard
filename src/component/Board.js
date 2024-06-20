@@ -6,6 +6,8 @@ import Pagination from "./Pagination";
 
 const Board = () => {
   const [board, setBoard] = useState([]);
+  const [startPage, setStartPage] = useState(1); // 시작페이지
+  const [boardPerPage, setBoardPerPage] = useState(6); // 한 페이지에 보여지는 게시글 갯수 6
 
   const getBoardList = async () => {
     await axios
@@ -55,7 +57,11 @@ const Board = () => {
           })}
         </tbody>
       </table>
-      <Pagination />
+      <Pagination
+        boardsNum={board.length}
+        startPage={startPage}
+        boardPerPage={boardPerPage}
+      />
     </div>
   );
 };
