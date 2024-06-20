@@ -1,5 +1,6 @@
 import React from "react";
 import Input from "./Input";
+import "../css/form.css";
 
 const BoardForm = ({ handleInputChange, inputs }) => {
   //     const [inputs, setInputs] = useState({
@@ -35,7 +36,7 @@ const BoardForm = ({ handleInputChange, inputs }) => {
   ];
 
   return (
-    <div>
+    <div className="writeform">
       {INPUT_DATA.map((item, id) => (
         <Input
           key={id}
@@ -46,38 +47,6 @@ const BoardForm = ({ handleInputChange, inputs }) => {
           IonChange={handleInputChange}
         />
       ))}
-      {/* <label>닉네임</label>
-      <input
-        type="text"
-        name="nickname"
-        value={nickname}
-        onChange={handleInputChange}
-        required
-      />
-      <label>비밀번호</label>
-      <input
-        type="password"
-        name="password"
-        value={password}
-        onChange={handleInputChange}
-        required
-      />
-      <label>제목</label>
-      <input
-        type="text"
-        name="title"
-        value={title}
-        onChange={handleInputChange}
-        required
-      />
-      <label>글 내용</label>
-      <input
-        type="text"
-        name="content"
-        value={content}
-        onChange={handleInputChange}
-        required
-      /> */}
       <button>등록하기</button>
     </div>
   );

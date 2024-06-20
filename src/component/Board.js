@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../css/board.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import Pagination from "./Pagination";
 
 const Board = () => {
   const [board, setBoard] = useState([]);
@@ -54,6 +55,7 @@ const Board = () => {
           })}
         </tbody>
       </table>
+      <Pagination />
     </div>
   );
 };

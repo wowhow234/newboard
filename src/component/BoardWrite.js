@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import "../css/userform.css";
+import "../css/form.css";
 import { useNavigate } from "react-router-dom";
 import BoardForm from "./BoardForm";
 

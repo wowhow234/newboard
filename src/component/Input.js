@@ -1,8 +1,9 @@
 import React from "react";
+import "../css/form.css";
 
 const Input = ({ label, Itype, Iname, Ivalue, IonChange, Mvalue }) => {
   return (
-    <div style={{ border: "1px solid pink" }}>
+    <div className="wf-input">
       <label>{label}</label>
       <input
         type={Itype}

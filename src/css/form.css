@@ -1,0 +1,28 @@
+form {
+  border: 1px solid black;
+}
+
+.writeform div:nth-last-child(3) > input {
+  width: 15em;
+}
+.writeform div:nth-last-child(2) > input {
+  width: 18em;
+}
+
+.wf-input {
+  border: 1px solid fuchsia;
+  text-align: left;
+  margin: 10px 0;
+  display: flex;
+}
+.wf-input label {
+  border: 1px solid rgb(244, 153, 153);
+  margin: 0 10px;
+  display: block;
+  width: 4em;
+}
+.wf-input input {
+  border: 1px solid gray;
+  border-radius: 5px;
+  height: 1.6em;
+}/*# sourceMappingURL=form.css.map */
