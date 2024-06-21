@@ -3,17 +3,24 @@ import "../css/board.css";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import Pagination from "./Pagination";
+import BoardTable from "./BoardTable";
 
 const Board = () => {
   const [board, setBoard] = useState([]);
-  const [startPage, setStartPage] = useState(1); // 시작페이지
+  const [currentPage, setCurrentPage] = useState(1); // 시작하는 현재 페이지 1
   const [boardPerPage, setBoardPerPage] = useState(6); // 한 페이지에 보여지는 게시글 갯수 6
 
   const getBoardList = async () => {
     await axios
-      .get("http://localhost:4000/board")
+      .get("http://localhost:4000/board", {
+        params: {
+          _limit: 6,
+          _page: currentPage,
+        },
+      })
       .then((response) => {
         // console.log("response----->", response);
+        // console.log("response.data : ", response.data);
         setBoard(response.data);
         // console.log("board----->", board)
       })
@@ -40,26 +47,13 @@ const Board = () => {
           </tr>
         </thead>
         <tbody>
-          {board.map((item) => {
-            return (
-              <tr key={item.id}>
-                <td>
-                  <span>{item.id}</span>
-                </td>
-                <td>
-                  <Link to={`/board/${item.id}`}>{item.datatitle}</Link>
-                </td>
-                <td>
-                  <span>{item.dataname}</span>
-                </td>
-              </tr>
-            );
-          })}
+          <BoardTable board={board} />
         </tbody>
       </table>
       <Pagination
         boardsNum={board.length}
-        startPage={startPage}
+        currentPage={currentPage}
+        setCurrentPage={setCurrentPage}
         boardPerPage={boardPerPage}
       />
     </div>
