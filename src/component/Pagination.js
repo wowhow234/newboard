@@ -8,17 +8,22 @@ const Pagination = ({
 }) => {
   // 게시글 전체 갯수 : boardsNum
   // 현재페이지 : currentPage
-  // 한 페이지당 게시글 갯수 : boardPerPage
+  // 한 페이지당 게시글 갯수 : boardPerPage = 5
 
   // 전체 페이지 수 (전체 게시글 수를 페이지당 게시물 수로 나눈 것을 올림 처리)
   const totalPages = Math.ceil(boardsNum / boardPerPage);
   // 페이지 수를 1,2,3,4로 표현하기 위한 빈 배열
   const pagesList = [];
+  // 마지막 페이지 번호
+  const lastPageNum = pagesList[pagesList.length - 1];
 
   for (let i = 1; i <= totalPages; i++) {
     pagesList.push(i);
     console.log("pagesList Array : ", pagesList);
   }
+
+  console.log("페이지 리스트 마지막---", pagesList[pagesList.length - 1]);
+  console.log("currentPage----->", currentPage);
 
   const nextPage = () => {
     setCurrentPage(currentPage + 1);
@@ -36,14 +41,25 @@ const Pagination = ({
   // }
 
   return (
-    <div style={{ border: "1px solid black" }}>
-      페이지네이션
-      <button onClick={prevPage}>이전</button>
-      {pagesList.map((item) => (
-        <button>{item}</button>
-      ))}
-      <button onClick={nextPage}>다음</button>
-    </div>
+    <>
+      <div style={{ border: "1px solid black" }}>
+        페이지네이션
+        {currentPage > 1 && <button onClick={prevPage}>이전</button>}
+        {pagesList.map((item) => (
+          <button
+            key={item}
+            onClick={() => setCurrentPage(item)}
+            style={{ color: currentPage === item ? "blue" : "black" }}
+          >
+            {item}
+          </button>
+        ))}
+        {/* 현재 페이지 = 마지막 페이지 라면 다음 버튼 X */}
+        {currentPage < { lastPageNum } && (
+          <button onClick={nextPage}>다음</button>
+        )}
+      </div>
+    </>
   );
 };
 
