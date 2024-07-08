@@ -5,6 +5,11 @@ import { Link } from "react-router-dom";
 import Pagination from "./Pagination";
 import BoardTable from "./BoardTable";
 
+const boardlinkStyle = {
+  textDecoration: "none",
+  color: "green",
+};
+
 const Board = () => {
   const [board, setBoard] = useState([]); // data가 담긴 값
   const [currentPage, setCurrentPage] = useState(1); // 시작하는 현재 페이지 1
@@ -42,8 +47,8 @@ const Board = () => {
   return (
     <div className="boardwrapper">
       <div className="Link2">
-        <Link to={"/"}>
-          <span>메인으로</span>
+        <Link to={"/"} style={boardlinkStyle}>
+          <span>메인화면으로 가기</span>
         </Link>
       </div>
       <table className="board-table">

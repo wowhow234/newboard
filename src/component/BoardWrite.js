@@ -13,6 +13,9 @@ const BoardWrite = () => {
   });
 
   const navigate = useNavigate();
+  const goBack = () => {
+    navigate(-1);
+  };
   const { nickname, password, title, content } = inputs; // 비구조화 할당
 
   const onChangeInput = (e) => {
@@ -43,11 +46,14 @@ const BoardWrite = () => {
       .catch((err) => console.log("에러발생 ㅠㅠ----", err));
     alert("제출 완료");
     e.preventDefault();
-    console.log("-----제출완료----", inputs);
+    console.log("제출완료----", inputs);
   };
 
   return (
     <>
+      <button type="button" onClick={goBack} id="bw-back">
+        이전으로
+      </button>
       <form onSubmit={onSubmitForm}>
         <BoardForm inputs={inputs} handleInputChange={onChangeInput} />
       </form>

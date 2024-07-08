@@ -2,7 +2,6 @@ import "../src/css/common.css";
 import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./component/Home";
-import Header from "./component/Header";
 import Board from "./component/Board";
 import BoardWrite from "./component/BoardWrite";
 import BoardDetail from "./component/BoardDetail";
@@ -11,7 +10,6 @@ import BoardModify from "./component/BoardModify";
 function App() {
   return (
     <div className="App">
-      <Header />
       <Routes>
         <Route>
           <Route path="/" element={<Home />} />

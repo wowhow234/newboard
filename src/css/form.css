@@ -2,6 +2,21 @@ form {
   border: 1px solid black;
 }
 
+button {
+  border: none;
+  width: 7em;
+  height: 2.5em;
+  border-radius: 1em;
+  color: #ffffff;
+  background-color: rgb(108, 225, 90);
+  font-size: 1em;
+}
+
+#bw-back {
+  display: block;
+  margin-left: 2em;
+}
+
 .writeform div:nth-last-child(3) > input {
   width: 15em;
 }
@@ -10,13 +25,11 @@ form {
 }
 
 .wf-input {
-  border: 1px solid fuchsia;
   text-align: left;
   margin: 10px 0;
   display: flex;
 }
 .wf-input label {
-  border: 1px solid rgb(244, 153, 153);
   margin: 0 10px;
   display: block;
   width: 4em;

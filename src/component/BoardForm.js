@@ -3,29 +3,7 @@ import Input from "./Input";
 import "../css/form.css";
 
 const BoardForm = ({ handleInputChange, inputs }) => {
-  //     const [inputs, setInputs] = useState({
-  //   nickname: "",
-  //   password: "",
-  //   title: "",
-  //   content : "",
-  //     })
-
   const { nickname, password, title, content } = inputs; // 비구조화 할당
-
-  //   const onChangeInput = (e : React.ChangeEvent<HTMLInputElement>) => {
-  //   const { value, name } = e.target; // e.target 에서 name과 value 만 가져오기
-  //   setInputs({
-  //     ...inputs,
-  //     [name] : value,
-
-  //   })
-  //   console.log("onChange되나..", e.target.value)
-  //   }
-
-  // useEffect(() => {
-  //   console.log("inputs----->", inputs)
-  // }, [inputs])
-
   const onChageInput = handleInputChange; // Input 컴포넌트 전달용
 
   const INPUT_DATA = [
@@ -47,7 +25,7 @@ const BoardForm = ({ handleInputChange, inputs }) => {
           IonChange={handleInputChange}
         />
       ))}
-      <button>등록하기</button>
+      <button type="button">등록하기</button>
     </div>
   );
 };

@@ -1,14 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbit&display=swap");
 .App {
   text-align: center;
-  border: 2px solid salmon;
-  width: 360px;
+  width: 800px;
   height: 100%;
-  margin: 0 auto;
+  margin: 150px auto 0;
 }
 
 body {
-  background-color: #ecf6ff;
   font-family: "Orbit", sans-serif;
   font-weight: 400;
   font-style: normal;
