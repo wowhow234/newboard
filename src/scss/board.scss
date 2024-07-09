@@ -18,12 +18,24 @@ table {
   border-collapse: collapse;
   width: 100%;
   text-align: center;
+  table-layout: fixed;
 }
 
 thead {
   font-weight: bold;
   color: #fff;
   background: #73685d;
+  th {
+    &:first-child {
+      width: 10%;
+    }
+    &:nth-last-child(2) {
+      width: 60%;
+    }
+    &:last-child {
+      width: 30%;
+    }
+  }
 }
 
 th,
@@ -41,9 +53,10 @@ td {
     margin: 10px 0;
   }
   & .d-content {
-    background-color: rgb(231, 231, 231);
+    background-color: rgb(231 231 231 / 25%);
     padding: 0.5em 1em 1.5em 1em;
     margin: 0.5em;
+    height: 8em;
   }
 }
 
@@ -54,7 +67,6 @@ hr {
 }
 
 .d-delete {
-  border: 1px solid black;
   display: block;
   text-align: center;
   & input {
@@ -69,15 +81,14 @@ hr {
 }
 
 .detail-button {
-  border: 1px solid orange;
   text-align: center;
-  margin: 0.5em 0;
+  margin: 1.5em 0;
   & button {
     margin: 0 0.5em;
     border-radius: 0.5em;
     border: none;
-    background-color: rgb(212, 120, 0);
-    color: white;
+    background-color: rgb(255 231 200);
+    color: #181818;
     font-weight: 400;
     font-size: 14px;
     padding: 5px;

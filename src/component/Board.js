@@ -48,7 +48,7 @@ const Board = () => {
     <div className="boardwrapper">
       <div className="Link2">
         <Link to={"/"} style={boardlinkStyle}>
-          <span>메인화면으로 가기</span>
+          <span>메인화면으로</span>
         </Link>
       </div>
       <table className="board-table">

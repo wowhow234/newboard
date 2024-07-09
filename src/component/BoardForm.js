@@ -10,7 +10,8 @@ const BoardForm = ({ handleInputChange, inputs }) => {
     { label: "닉네임", type: "text", name: "nickname", value: nickname },
     { label: "비밀번호", type: "password", name: "password", value: password },
     { label: "제목", type: "text", name: "title", value: title },
-    { label: "글 내용", type: "text", name: "content", value: content },
+    { label: "글 내용", type: "hidden" },
+    // { label: "글 내용" },
   ];
 
   return (
@@ -25,6 +26,7 @@ const BoardForm = ({ handleInputChange, inputs }) => {
           IonChange={handleInputChange}
         />
       ))}
+      <textarea name="content" defaultvalue="content" required></textarea>
       <button type="button">등록하기</button>
     </div>
   );

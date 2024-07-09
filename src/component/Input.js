@@ -10,7 +10,7 @@ const Input = ({ label, Itype, Iname, Ivalue, IonChange, Mvalue }) => {
         name={Iname}
         value={Ivalue}
         onChange={IonChange}
-        defaultValue={Mvalue}
+        // defaultValue={Mvalue}
         // key={Mvalue}
         required
       />

@@ -1,5 +1,7 @@
 form {
-  border: 1px solid black;
+  border: 1px solid rgba(122, 122, 122, 0.431372549);
+  border-radius: 0.5em;
+  box-shadow: 1px 0px 3px rgba(175, 175, 175, 0.7607843137);
 }
 
 button {
@@ -10,18 +12,32 @@ button {
   color: #ffffff;
   background-color: rgb(108, 225, 90);
   font-size: 1em;
+  cursor: pointer;
 }
 
 #bw-back {
   display: block;
-  margin-left: 2em;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
 }
 
-.writeform div:nth-last-child(3) > input {
+.writeform {
+  margin: 10px;
+}
+.writeform div:nth-last-child(3) > label {
   width: 15em;
 }
-.writeform div:nth-last-child(2) > input {
+.writeform div:nth-last-child(4) > input {
   width: 18em;
+}
+.writeform textarea {
+  position: relative;
+  translate: -110px -30px;
+  width: 270px;
+  height: 80px;
+  resize: none;
+  border: 1px solid gray;
+  border-radius: 5px;
 }
 
 .wf-input {
@@ -38,4 +54,21 @@ button {
   border: 1px solid gray;
   border-radius: 5px;
   height: 1.6em;
+}
+
+.pagination {
+  margin: 10px;
+  display: inline-flex;
+}
+.pagination button {
+  width: 2.9em;
+  margin: 0 1px;
+  background-color: #dfdfdf;
+  color: rgb(120, 120, 120);
+}
+.pagination button:hover {
+  background: #c6c6c6;
+}
+.pagination button[class=active] {
+  margin: 0 1em;
 }/*# sourceMappingURL=form.css.map */

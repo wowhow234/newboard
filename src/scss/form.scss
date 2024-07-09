@@ -1,5 +1,7 @@
 form {
-  border: 1px solid black;
+  border: 1px solid #7a7a7a6e;
+  border-radius: 0.5em;
+  box-shadow: 1px 0px 3px #afafafc2;
 }
 
 button {
@@ -10,21 +12,33 @@ button {
   color: #ffffff;
   background-color: rgb(108, 225, 90);
   font-size: 1em;
+  cursor: pointer;
 }
 
 #bw-back {
   display: block;
-  margin-left: 2em;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
 }
 
 .writeform {
+  margin: 10px;
   div {
-    &:nth-last-child(3) > input {
+    &:nth-last-child(3) > label {
       width: 15em;
     }
-    &:nth-last-child(2) > input {
+    &:nth-last-child(4) > input {
       width: 18em;
     }
+  }
+  textarea {
+    position: relative;
+    translate: -110px -30px;
+    width: 270px;
+    height: 80px;
+    resize: none;
+    border: 1px solid gray;
+    border-radius: 5px;
   }
 }
 
@@ -41,5 +55,29 @@ button {
     border: 1px solid gray;
     border-radius: 5px;
     height: 1.6em;
+  }
+}
+
+.pagination {
+  // border: 1px solid black;
+  margin: 10px;
+  display: inline-flex;
+  & button {
+    width: 2.9em;
+    margin: 0 1px;
+    background-color: #dfdfdf;
+    color: rgb(120, 120, 120);
+    &:hover {
+      background: #c6c6c6;
+    }
+    // &:first-child {
+    //   margin-right: 1em;
+    // }
+    // &:last-child {
+    //   margin-left: 1em;
+    // }
+    &[class="active"] {
+      margin: 0 1em;
+    }
   }
 }

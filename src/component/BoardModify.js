@@ -9,9 +9,6 @@ const BoardModify = () => {
   };
 
   const locationState = useLocation().state;
-  // const from = location.state;
-  // console.log("link state----->", from);
-  // console.log("location으로 받은 state----->", locationState); // useEffect로 옮김
 
   // location hook 으로 받아온 인자들을 useState로 담기 위함
   const [modifyInputs, setModifyInputs] = useState({
@@ -24,7 +21,6 @@ const BoardModify = () => {
 
   // 담은거 꺼내기
   const { Mnickname, Mpassword, Mtitle, Mcontent, Mid } = modifyInputs;
-  // console.log("📥State확인하기----->", modifyInputs); // useEffect로 옮김
 
   //-----------------------------------------------------------------
 
@@ -35,7 +31,7 @@ const BoardModify = () => {
       ...modifyInputs,
       [name]: value,
     });
-    console.log("e.target.value(onChange)-----", e.target.value);
+    // console.log("e.target.value(onChange)-----", e.target.value);
   };
 
   const LOCATION_INPUT_DATA = [
@@ -63,8 +59,7 @@ const BoardModify = () => {
   //-------------------------------------------------------
   useEffect(() => {
     // console.log("location으로 받은 state----->", locationState); // 최초 렌더링 때 실행
-    // console.log("📥State확인하기----->", modifyInputs); // 최초 렌더링 때 실행
-    console.log("🍪🍪🍪🍪인풋값변경되는지-----", modifyInputs);
+    console.log("input values-----", modifyInputs);
   }, [modifyInputs]); // 의존성 배열은 빈 값으로 하면 location, modifyIpunts 콘솔은 최초 실행됨.
 
   const onSubmitModifyForm = (e) => {
@@ -88,7 +83,6 @@ const BoardModify = () => {
   return (
     <>
       <form onSubmit={onSubmitModifyForm}>
-        수정게시판 ㅇㅇㅇㅇㅇㅇ
         {LOCATION_INPUT_DATA.map((item, i) => (
           <div key={i}>
             <label>{item.label}</label>
@@ -110,7 +104,7 @@ const BoardModify = () => {
           //   IonChange={onChangeModifyInput}
           // />
         ))}
-        <button>수정 완료하기</button>
+        <button>수정 완료</button>
         <button onClick={goBack}>이전으로</button>
       </form>
     </>

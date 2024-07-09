@@ -57,8 +57,9 @@ const BoardDetail = () => {
   return (
     <div>
       <h3>게시판 상세 내용</h3>
-      <button onClick={goBack}>뒤로가기</button>
-      {/* <BoardItem /> */}
+      <button onClick={goBack} id="bw-back">
+        뒤로가기
+      </button>
       <div className="board-detail">
         <div className="d1">
           <span>작성자 | </span>
