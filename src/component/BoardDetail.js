@@ -11,6 +11,7 @@ const BoardDetail = () => {
   const [isDelete, setIsDelete] = useState(false);
   const [isDeletePw, setIsDeletePw] = useState();
   const [isDeleteFail, setIsDeleteFail] = useState(false);
+  const [isModifyPw, setIsModifyPw] = useState();
 
   const navigate = useNavigate();
   const goBack = () => {
@@ -28,11 +29,11 @@ const BoardDetail = () => {
       })
       .catch((err) => console.err(err));
     // console.log("삭제pw--->", isDeletePw);
-  }, [isDeletePw]);
+  }, [isDeletePw, id]);
 
   // 게시글 삭제하기
+  const dataPw = boardDetail.datapw;
   const onClickDelete = (e) => {
-    const dataPw = boardDetail.datapw;
     if (isDeletePw === dataPw) {
       setIsDelete(!isDelete);
       axios
@@ -40,23 +41,40 @@ const BoardDetail = () => {
         .then((response) => {
           alert("삭제하였습니다.");
           navigate("/board");
-          console.log("삭제성공----->", response);
+          // console.log("삭제성공----->", response);
         })
         .catch((err) => console.error(err));
     } else {
       setIsDeleteFail(true);
-      console.error("ERROR!", Error);
     }
   };
 
+  const onClickModify = (e) => {
+    if (isDelete === dataPw) {
+      setIsModifyPw(!isModifyPw);
+      navigate(`/modify/${id}`, {
+        state: {
+          toM_nickname: boardDetail.dataname,
+          toM_title: boardDetail.datatitle,
+          toM_content: boardDetail.datacontent,
+          toM_id: boardDetail.id,
+          toM_pw: boardDetail.datapw,
+        },
+      });
+    } else if (e.target.value === "") {
+      alert("비밀번호를 입력하세요.");
+    } else {
+      setIsModifyPw(false);
+      alert("비밀번호가 틀렸습니다.");
+    }
+  };
   const onChangeDelete = (e) => {
     setIsDeletePw(e.target.value);
-    // console.log("삭제pw--->", isDeletePw);
+    console.log("삭제pw--->", isDeletePw);
   };
 
   return (
     <div>
-      <h3>게시판 상세 내용</h3>
       <button onClick={goBack} id="bw-back">
         뒤로가기
       </button>
@@ -87,7 +105,7 @@ const BoardDetail = () => {
           <div className="d-wrong-pw">비밀번호가 틀렸습니다.</div>
         )}
         <div className="detail-button">
-          <Link
+          {/* <Link
             to={`/modify/${id}`}
             state={{
               toM_nickname: boardDetail.dataname,
@@ -96,9 +114,9 @@ const BoardDetail = () => {
               toM_id: boardDetail.id,
               toM_pw: boardDetail.datapw,
             }}
-          >
-            <button type="button">수정하기</button>
-          </Link>
+          > */}
+          <button onClick={onClickModify}>수정하기</button>
+          {/* </Link> */}
           <button onClick={onClickDelete}>삭제하기</button>
         </div>
       </div>

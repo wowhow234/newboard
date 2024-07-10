@@ -28,7 +28,8 @@
       "id": "5",
       "dataname": "관리자",
       "datatitle": "제목4",
-      "datacontent": "관리자123123 "
+      "datacontent": "관리자123123 ",
+      "datapw": "123"
     },
     {
       "id": "6",
@@ -81,10 +82,10 @@
       "datapw": "test5"
     },
     {
-      "id": "48cb",
+      "id": "9ace",
       "dataname": "여름",
-      "datatitle": "더워요",
-      "datacontent": "너무더워요......... 시원한 에어컨 바람이 필요해요....",
+      "datatitle": "너무더워",
+      "datacontent": "진짜 너무더워..",
       "datapw": "summer"
     }
   ]

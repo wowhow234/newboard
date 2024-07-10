@@ -26,8 +26,15 @@ const BoardForm = ({ handleInputChange, inputs }) => {
           IonChange={handleInputChange}
         />
       ))}
-      <textarea name="content" defaultvalue="content" required></textarea>
-      <button type="button">등록하기</button>
+      <textarea
+        name="content"
+        value={content}
+        onChange={handleInputChange}
+        required
+      ></textarea>
+      <button type="submit" className="bw-submit">
+        등록하기
+      </button>
     </div>
   );
 };

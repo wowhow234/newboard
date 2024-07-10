@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import axios from "axios";
+import Input from "./Input";
+import "../css/form.css";
 
 const BoardModify = () => {
   const navigate = useNavigate();
@@ -50,9 +52,7 @@ const BoardModify = () => {
     { label: "제목", type: "text", name: "Mtitle", value: Mtitle },
     {
       label: "글 내용",
-      type: "text",
-      name: "Mcontent",
-      value: Mcontent,
+      type: "hidden",
     },
   ];
 
@@ -74,38 +74,52 @@ const BoardModify = () => {
         console.log("patch 응답---->", res);
         navigate("/board");
       })
-      .catch((err) => console.log("-----ERROR----", err));
+      .catch((err) => console.log(err));
     setModifyInputs(modifyInputs);
     e.preventDefault();
-    console.log("📫-------폼 제출 확인-------", modifyInputs);
+    console.log("📫check submit form--", modifyInputs);
   };
 
   return (
     <>
+      <button onClick={goBack} id="bw-back">
+        이전으로
+      </button>
       <form onSubmit={onSubmitModifyForm}>
-        {LOCATION_INPUT_DATA.map((item, i) => (
-          <div key={i}>
-            <label>{item.label}</label>
+        <div className="modifyform">
+          {LOCATION_INPUT_DATA.map((item, i) => (
+            <div key={i}>
+              {/* <label>{item.label}</label>
             <input
-              type={item.type}
-              name={item.name}
-              defaultValue={item.value}
-              // key={item.value}
-              onChange={onChangeModifyInput}
-              required
-            />
-          </div>
-          // <Input
-          //   key={id}
-          //   label={item.label}
-          //   Itype={item.type}
-          //   Iname={item.name}
-          //   Mvalue={item.value}
-          //   IonChange={onChangeModifyInput}
-          // />
-        ))}
-        <button>수정 완료</button>
-        <button onClick={goBack}>이전으로</button>
+            type={item.type}
+            name={item.name}
+            defaultValue={item.value}
+            // key={item.value}
+            onChange={onChangeModifyInput}
+            required
+            /> */}
+              <Input
+                key={i}
+                label={item.label}
+                Itype={item.type}
+                Iname={item.name}
+                Ivalue={item.value || ""}
+                IonChange={onChangeModifyInput}
+              />
+            </div>
+          ))}
+          <textarea
+            className="Mcontent"
+            name="Mcontent"
+            value={Mcontent}
+            onChange={onChangeModifyInput}
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" className="M-submit">
+          수정 완료
+        </button>
       </form>
     </>
   );

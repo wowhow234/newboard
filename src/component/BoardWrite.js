@@ -28,7 +28,7 @@ const BoardWrite = () => {
   };
 
   useEffect(() => {
-    console.log("🍪🍪🍪🍪inputs----->", inputs);
+    console.log("inputs----->", inputs);
   }, [inputs]);
 
   const onSubmitForm = (e) => {
@@ -40,13 +40,13 @@ const BoardWrite = () => {
         datapw: password,
       })
       .then((res) => {
-        console.log("post응답--->", res);
+        // console.log("post--->", res);
         navigate("/board");
       })
-      .catch((err) => console.log("에러발생 ㅠㅠ----", err));
+      .catch((err) => console.log("Error---->", err));
     alert("제출 완료");
     e.preventDefault();
-    console.log("제출완료----", inputs);
+    // console.log("제출완료확인----", inputs);
   };
 
   return (

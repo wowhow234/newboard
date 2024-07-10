@@ -2,6 +2,7 @@ form {
   border: 1px solid #7a7a7a6e;
   border-radius: 0.5em;
   box-shadow: 1px 0px 3px #afafafc2;
+  margin: 10px;
 }
 
 button {
@@ -14,6 +15,16 @@ button {
   font-size: 1em;
   cursor: pointer;
 }
+.bw-submit {
+  position: relative;
+  translate: -136px 0px;
+  margin-bottom: 10px;
+}
+
+.M-submit {
+  // margin-bottom: 10px;
+  translate: 0 -10px;
+}
 
 #bw-back {
   display: block;
@@ -22,24 +33,35 @@ button {
 }
 
 .writeform {
-  margin: 10px;
+  display: block;
   div {
-    &:nth-last-child(3) > label {
-      width: 15em;
-    }
+    // &:nth-last-child(3) > label {
+    //   width: 15em;
+    // }
     &:nth-last-child(4) > input {
       width: 18em;
     }
   }
-  textarea {
-    position: relative;
-    translate: -110px -30px;
-    width: 270px;
-    height: 80px;
-    resize: none;
-    border: 1px solid gray;
-    border-radius: 5px;
+}
+
+.modifyform {
+  div:nth-last-child(2) > input {
+    width: 18em;
   }
+}
+
+textarea {
+  position: relative;
+  translate: -110px -30px;
+  width: 270px;
+  height: 80px;
+  resize: none;
+  border: 1px solid gray;
+  border-radius: 5px;
+}
+
+.Mcontent {
+  translate: -167px -30px;
 }
 
 .wf-input {
