@@ -11,7 +11,7 @@ const linkStyle = {
 
 const Home = () => {
   return (
-    <div className="wrapper">
+    <div className="home">
       <h1>간단한 방명록을 남겨보세요!</h1>
       <div className="Link1">
         <button>

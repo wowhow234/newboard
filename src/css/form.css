@@ -1,4 +1,5 @@
-form {
+form,
+.board-detail {
   border: 1px solid rgba(122, 122, 122, 0.431372549);
   border-radius: 0.5em;
   box-shadow: 1px 0px 3px rgba(175, 175, 175, 0.7607843137);
@@ -80,7 +81,7 @@ textarea {
 .pagination button {
   width: 2.9em;
   margin: 0 1px;
-  background-color: #dfdfdf;
+  background-color: #eeeeee;
   color: rgb(120, 120, 120);
 }
 .pagination button:hover {

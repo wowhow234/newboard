@@ -1,7 +1,7 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "../css/board.css";
 
 const BoardDetail = () => {
@@ -28,7 +28,7 @@ const BoardDetail = () => {
         // console.log("boardDetail---->", boardDetail);
       })
       .catch((err) => console.err(err));
-    // console.log("삭제pw--->", isDeletePw);
+    // console.log("password--->", isDeletePw);
   }, [isDeletePw, id]);
 
   // 게시글 삭제하기
@@ -49,8 +49,9 @@ const BoardDetail = () => {
     }
   };
 
-  const onClickModify = (e) => {
-    if (isDelete === dataPw) {
+  // 게시글 수정하기
+  const onClickModify = () => {
+    if (isDeletePw === dataPw) {
       setIsModifyPw(!isModifyPw);
       navigate(`/modify/${id}`, {
         state: {
@@ -61,7 +62,7 @@ const BoardDetail = () => {
           toM_pw: boardDetail.datapw,
         },
       });
-    } else if (e.target.value === "") {
+    } else if (isDeletePw === undefined) {
       alert("비밀번호를 입력하세요.");
     } else {
       setIsModifyPw(false);
@@ -70,7 +71,6 @@ const BoardDetail = () => {
   };
   const onChangeDelete = (e) => {
     setIsDeletePw(e.target.value);
-    console.log("삭제pw--->", isDeletePw);
   };
 
   return (

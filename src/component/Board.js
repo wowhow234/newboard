@@ -45,13 +45,13 @@ const Board = () => {
   }, []);
 
   return (
-    <div className="boardwrapper">
+    <>
       <div className="Link2">
         <Link to={"/"} style={boardlinkStyle}>
           <span>메인화면으로</span>
         </Link>
       </div>
-      <table className="board-table">
+      <table>
         <thead>
           <tr>
             <th>번호</th>
@@ -69,7 +69,7 @@ const Board = () => {
         setCurrentPage={setCurrentPage}
         boardPerPage={boardPerPage}
       />
-    </div>
+    </>
   );
 };
 

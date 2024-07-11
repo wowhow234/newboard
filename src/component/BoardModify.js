@@ -57,10 +57,11 @@ const BoardModify = () => {
   ];
 
   //-------------------------------------------------------
-  useEffect(() => {
-    // console.log("location으로 받은 state----->", locationState); // 최초 렌더링 때 실행
-    console.log("input values-----", modifyInputs);
-  }, [modifyInputs]); // 의존성 배열은 빈 값으로 하면 location, modifyIpunts 콘솔은 최초 실행됨.
+  // useEffect(() => {
+  // console.log("location으로 받은 state----->", locationState); // 최초 렌더링 때 실행
+  //   console.log("input values-----", modifyInputs);
+  // }, [modifyInputs]);
+  // 의존성 배열은 빈 값으로 하면 location, modifyIpunts 콘솔은 최초 실행됨.
 
   const onSubmitModifyForm = (e) => {
     axios
@@ -71,13 +72,14 @@ const BoardModify = () => {
         datapw: Mpassword,
       })
       .then((res) => {
-        console.log("patch 응답---->", res);
+        alert("수정하였습니다.");
+        // console.log("patch 응답---->", res);
         navigate("/board");
       })
       .catch((err) => console.log(err));
     setModifyInputs(modifyInputs);
     e.preventDefault();
-    console.log("📫check submit form--", modifyInputs);
+    // console.log("📫check submit form--", modifyInputs);
   };
 
   return (

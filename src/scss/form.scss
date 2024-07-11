@@ -1,4 +1,5 @@
-form {
+form,
+.board-detail {
   border: 1px solid #7a7a7a6e;
   border-radius: 0.5em;
   box-shadow: 1px 0px 3px #afafafc2;
@@ -81,23 +82,16 @@ textarea {
 }
 
 .pagination {
-  // border: 1px solid black;
   margin: 10px;
   display: inline-flex;
   & button {
     width: 2.9em;
     margin: 0 1px;
-    background-color: #dfdfdf;
+    background-color: #eeeeee;
     color: rgb(120, 120, 120);
     &:hover {
       background: #c6c6c6;
     }
-    // &:first-child {
-    //   margin-right: 1em;
-    // }
-    // &:last-child {
-    //   margin-left: 1em;
-    // }
     &[class="active"] {
       margin: 0 1em;
     }

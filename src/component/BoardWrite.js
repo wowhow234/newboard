@@ -24,12 +24,13 @@ const BoardWrite = () => {
       ...inputs,
       [name]: value,
     });
-    console.log("onChange되나..", e.target.value);
+    // console.log("onChange..", e.target.value);
   };
 
-  useEffect(() => {
-    console.log("inputs----->", inputs);
-  }, [inputs]);
+  // input 입력 확인
+  // useEffect(() => {
+  //   console.log("inputs----->", inputs);
+  // }, [inputs]);
 
   const onSubmitForm = (e) => {
     axios

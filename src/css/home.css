@@ -1,5 +1,7 @@
-.wrapper {
-  border: 4px solid rgb(160, 19, 3);
+.home {
+  box-shadow: 0px 0px 11px rgba(169, 169, 169, 0.3215686275);
+  border-radius: 2em;
+  padding: 10px;
 }
 
 h1 {
